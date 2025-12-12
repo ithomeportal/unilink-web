@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Users, Target, TrendingUp, Heart, ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
+import Image from 'next/image';
+import { Users, Target, TrendingUp, Heart, ArrowRight, CheckCircle, ExternalLink, MapPin, Clock, Briefcase } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Careers | Unilink Transportation',
@@ -32,12 +32,18 @@ const values = [
 ];
 
 const benefits = [
-  'Competitive compensation packages',
+  'Competitive salaries and health benefits',
+  'Training, mentorship, and advancement',
+  'Collaborative team environment',
+  'Flexible shift options (day, night, weekend)',
   'Professional development opportunities',
-  'Dynamic, multicultural work environment',
-  'Career growth within a growing company',
-  'Collaborative team culture',
-  'Industry-leading training programs',
+  'Leadership in the 3PL sector',
+];
+
+const departments = [
+  { name: 'Operations', icon: Briefcase },
+  { name: 'IT', icon: Target },
+  { name: 'Sales', icon: TrendingUp },
 ];
 
 export default function CareersPage() {
@@ -63,10 +69,12 @@ export default function CareersPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Team photo of Unilink employees - could be office setting, team meeting, or group photo. Should show diverse, professional team members working together. Conveys positive company culture.]"
-                aspectRatio="video"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/team-photo.jpeg"
+                alt="Unilink Transportation Team"
+                width={700}
+                height={400}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
 
@@ -89,7 +97,7 @@ export default function CareersPage() {
 
               <div className="pt-4">
                 <a
-                  href="https://unilink.buk.mx/trabaja-con-nosotros"
+                  href="https://jobs.unilinktransportation.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center gap-2"
@@ -158,10 +166,12 @@ export default function CareersPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Professional workplace image - could be modern office space, employee at work station, or team collaboration moment. Should convey professional, positive work environment.]"
-                aspectRatio="square"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/office-interior.jpg"
+                alt="Unilink office environment"
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
           </div>
@@ -173,10 +183,12 @@ export default function CareersPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Truck driver in cab, or carrier partner handshake, or fleet of trucks. Should represent carrier partnership opportunities. Professional and welcoming.]"
-                aspectRatio="video"
-                className="rounded-2xl"
+              <Image
+                src="/images/truck-driver.jpg"
+                alt="Carrier partner"
+                width={700}
+                height={400}
+                className="rounded-2xl object-cover"
               />
             </div>
 
@@ -207,8 +219,8 @@ export default function CareersPage() {
               </ul>
 
               <div className="pt-4">
-                <Link href="/contact" className="btn-accent inline-flex items-center gap-2">
-                  Become a Partner
+                <Link href="/carriers" className="btn-accent inline-flex items-center gap-2">
+                  Become a Carrier
                   <ArrowRight size={18} />
                 </Link>
               </div>
@@ -227,7 +239,7 @@ export default function CareersPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="https://unilink.buk.mx/trabaja-con-nosotros"
+                href="https://jobs.unilinktransportation.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-2"
@@ -236,7 +248,7 @@ export default function CareersPage() {
                 <ExternalLink size={18} />
               </a>
               <Link href="/contact" className="btn-secondary">
-                Contact HR
+                Contact Us
               </Link>
             </div>
           </div>
