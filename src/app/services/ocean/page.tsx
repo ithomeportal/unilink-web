@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Ship, CheckCircle, ArrowRight, Globe, Package, FileText, Warehouse } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'Ocean Shipping Services | Unilink Transportation',
@@ -13,19 +13,19 @@ const containerTypes = [
     name: '20 Ft. Container',
     capacity: '~33 cubic meters',
     description: 'Standard container for smaller shipments. Ideal for heavy cargo or partial loads.',
-    imageDescription: '[PHOTO NEEDED: 20-foot shipping container, preferably at port or being moved by crane. Clean, professional image.]',
+    image: '/images/container-20ft.jpg',
   },
   {
     name: '40 Ft. Container',
     capacity: '~67 cubic meters',
     description: 'Most common container size for international shipping. Great balance of capacity and cost.',
-    imageDescription: '[PHOTO NEEDED: 40-foot shipping container, similar setting to above. Shows scale difference from 20ft.]',
+    image: '/images/container-40ft.jpg',
   },
   {
     name: '40 Ft. High Cube',
     capacity: '~76 cubic meters',
     description: 'Extra height for voluminous cargo. One foot taller than standard 40ft containers.',
-    imageDescription: '[PHOTO NEEDED: 40-foot high cube container, emphasizing the extra height. Professional port/shipping setting.]',
+    image: '/images/container-40ft-hc.jpg',
   },
 ];
 
@@ -79,10 +79,13 @@ export default function OceanPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Large container ship at port, or aerial view of shipping port with containers. Should convey scale of ocean freight operations and global trade. High-quality, impressive image.]"
-                aspectRatio="video"
-                className="rounded-2xl shadow-2xl"
+              <Image
+                src="/images/ocean-hero.jpg"
+                alt="Ocean container shipping"
+                width={800}
+                height={450}
+                className="rounded-2xl shadow-2xl object-cover"
+                priority
               />
             </div>
           </div>
@@ -147,10 +150,12 @@ export default function OceanPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Container yard operations - cranes loading/unloading containers, or containers being transported at port. Shows logistics operations and efficiency.]"
-                aspectRatio="square"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/container-40ft.jpg"
+                alt="Container yard operations"
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
           </div>
@@ -172,10 +177,12 @@ export default function OceanPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {containerTypes.map((container, index) => (
               <div key={index} className="card overflow-hidden">
-                <ImagePlaceholder
-                  description={container.imageDescription}
-                  aspectRatio="video"
-                  className="rounded-none"
+                <Image
+                  src={container.image}
+                  alt={container.name}
+                  width={400}
+                  height={225}
+                  className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary-900 mb-2">{container.name}</h3>
@@ -224,10 +231,12 @@ export default function OceanPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: World map showing major shipping routes, or stylized globe with shipping lane connections. Alternatively, an impressive shot of a container ship on open ocean. Conveys global reach.]"
-                aspectRatio="video"
-                className="rounded-2xl"
+              <Image
+                src="/images/coverage-map.jpg"
+                alt="Global shipping routes"
+                width={800}
+                height={450}
+                className="rounded-2xl object-cover"
               />
             </div>
 

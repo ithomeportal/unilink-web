@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Plane, CheckCircle, ArrowRight, Clock, Globe, Zap, Package } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'Air Freight Services | Unilink Transportation',
@@ -84,10 +84,13 @@ export default function AirFreightPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Cargo plane on tarmac or in flight. Could also be air freight being loaded onto aircraft, or cargo containers at airport. Should convey speed, reliability, and global connectivity. High-quality image.]"
-                aspectRatio="video"
-                className="rounded-2xl shadow-2xl"
+              <Image
+                src="/images/air-freight-hero.jpg"
+                alt="Air freight cargo services"
+                width={800}
+                height={450}
+                className="rounded-2xl shadow-2xl object-cover"
+                priority
               />
             </div>
           </div>
@@ -151,10 +154,12 @@ export default function AirFreightPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Air freight operations - could be cargo being sorted at airport facility, packages being loaded onto aircraft, or logistics team coordinating shipments. Shows professionalism and efficiency.]"
-                aspectRatio="square"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/air-freight-hero.jpg"
+                alt="Air cargo operations"
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
           </div>
@@ -199,10 +204,12 @@ export default function AirFreightPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: World map with flight routes or global connectivity visualization. Or could be a professional shot of airplane flying over globe/world. Conveys worldwide reach.]"
-                aspectRatio="video"
-                className="rounded-2xl"
+              <Image
+                src="/images/coverage-map.jpg"
+                alt="Global air freight coverage"
+                width={800}
+                height={450}
+                className="rounded-2xl object-cover"
               />
             </div>
 

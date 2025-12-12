@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Target, Eye, Heart, Award, Users, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'About Us | Unilink Transportation',
@@ -65,10 +65,12 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Professional photo of Unilink headquarters building in San Antonio, TX, or a high-quality image showing company operations/warehouse facility. Should convey professionalism and scale.]"
-                aspectRatio="video"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/headquarters.jpeg"
+                alt="Unilink Transportation Headquarters"
+                width={800}
+                height={450}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
 
@@ -163,10 +165,12 @@ export default function AboutPage() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Professional headshot or business portrait of CEO Erick Mendoza. Should be high-quality, well-lit, and convey leadership and professionalism. Formal business attire preferred.]"
-                aspectRatio="portrait"
-                className="rounded-2xl shadow-lg max-w-md mx-auto"
+              <Image
+                src="/images/team-photo.jpeg"
+                alt="Unilink Transportation Team"
+                width={500}
+                height={600}
+                className="rounded-2xl shadow-lg max-w-md mx-auto object-cover"
               />
             </div>
           </div>
@@ -194,10 +198,12 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Action shot of Unilink operations - could be truck being loaded, warehouse activity, or air freight handling. Should show professional operations and modern equipment.]"
-                aspectRatio="video"
-                className="rounded-2xl"
+              <Image
+                src="/images/truck-driver.jpg"
+                alt="Unilink Professional Driver"
+                width={800}
+                height={450}
+                className="rounded-2xl object-cover"
               />
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
 
 const navigation = [
@@ -67,10 +68,14 @@ export default function Header() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className={`font-bold text-2xl transition-colors ${scrolled ? 'text-primary-700' : 'text-white'}`}>
-              <span className="text-accent-500">UNILINK</span>
-              <span className="block text-sm font-normal tracking-wider">TRANSPORTATION</span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Unilink Transportation"
+              width={180}
+              height={50}
+              className={`h-12 w-auto transition-all ${scrolled ? '' : 'brightness-0 invert'}`}
+              priority
+            />
           </Link>
 
           {/* Desktop navigation */}

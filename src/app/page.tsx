@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Truck, Plane, Ship, Clock, Shield, Globe, ArrowRight, CheckCircle, Phone } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 const services = [
   {
@@ -94,10 +94,13 @@ export default function HomePage() {
 
             <div className="hidden lg:block">
               <div className="relative">
-                <ImagePlaceholder
-                  description="[PHOTO NEEDED: Professional image of Unilink truck/fleet, or logistics operations center, or team at work. Should show branded equipment if available. High quality, well-lit photo.]"
-                  aspectRatio="square"
-                  className="rounded-2xl shadow-2xl"
+                <Image
+                  src="/images/hero-main.jpg"
+                  alt="Unilink Transportation - Trucking Services"
+                  width={600}
+                  height={600}
+                  className="rounded-2xl shadow-2xl object-cover"
+                  priority
                 />
                 {/* Floating card */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs animate-slide-up">
@@ -229,10 +232,12 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Image showing Unilink operations - could be warehouse/distribution center, team meeting, or CEO Erick Mendoza. Professional, shows company culture and scale of operations.]"
-                aspectRatio="square"
-                className="rounded-2xl"
+              <Image
+                src="/images/operations.jpg"
+                alt="Unilink Transportation Operations Center"
+                width={600}
+                height={600}
+                className="rounded-2xl object-cover"
               />
               {/* Accent shape */}
               <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 bg-accent-500/10 rounded-2xl -z-10" />

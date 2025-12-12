@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Truck, CheckCircle, ArrowRight, MapPin, Clock, Shield, Package } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'Over The Road Trucking | Unilink Transportation',
@@ -13,25 +13,25 @@ const equipmentTypes = [
     name: 'Dry Van',
     sizes: '48\' and 53\'',
     description: 'Standard enclosed trailers for general freight, protecting cargo from weather and theft.',
-    imageDescription: '[PHOTO NEEDED: Dry van trailer - standard 53\' enclosed trailer, clean and professional looking]',
+    image: '/images/equipment-dryvan.jpg',
   },
   {
     name: 'Flatbed',
     sizes: '48\' and 53\'',
     description: 'Open trailers for oversized, heavy, or irregularly shaped cargo that cannot fit in enclosed trailers.',
-    imageDescription: '[PHOTO NEEDED: Flatbed trailer with cargo secured, showing professional strapping and equipment]',
+    image: '/images/equipment-flatbed.jpeg',
   },
   {
     name: 'Reefer',
     sizes: '48\' and 53\'',
     description: 'Temperature-controlled trailers for perishable goods, pharmaceuticals, and temperature-sensitive cargo.',
-    imageDescription: '[PHOTO NEEDED: Refrigerated trailer (reefer) showing temperature control unit, professional appearance]',
+    image: '/images/equipment-dryvan.jpg',
   },
   {
     name: 'Over-Dimension',
     sizes: 'Various',
     description: 'Specialized equipment for cargo that exceeds standard size and weight limits.',
-    imageDescription: '[PHOTO NEEDED: Specialized trailer carrying oversized load, showing proper permits and escort if applicable]',
+    image: '/images/equipment-overdimension.jpg',
   },
 ];
 
@@ -81,10 +81,13 @@ export default function TruckingPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Hero image of professional semi-truck on highway at sunrise/sunset. Ideally Unilink branded truck if available. Should convey reliability and nationwide coverage. High-quality, dramatic lighting preferred.]"
-                aspectRatio="video"
-                className="rounded-2xl shadow-2xl"
+              <Image
+                src="/images/trucking-hero.jpg"
+                alt="Professional trucking services"
+                width={800}
+                height={450}
+                className="rounded-2xl shadow-2xl object-cover"
+                priority
               />
             </div>
           </div>
@@ -149,10 +152,12 @@ export default function TruckingPage() {
             </div>
 
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Truck being loaded at warehouse dock, or fleet of trucks parked professionally at facility. Shows operational scale and organization.]"
-                aspectRatio="square"
-                className="rounded-2xl shadow-lg"
+              <Image
+                src="/images/operations.jpg"
+                alt="Trucking operations center"
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-lg object-cover"
               />
             </div>
           </div>
@@ -174,10 +179,12 @@ export default function TruckingPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {equipmentTypes.map((equipment, index) => (
               <div key={index} className="card overflow-hidden">
-                <ImagePlaceholder
-                  description={equipment.imageDescription}
-                  aspectRatio="video"
-                  className="rounded-none"
+                <Image
+                  src={equipment.image}
+                  alt={equipment.name}
+                  width={600}
+                  height={340}
+                  className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -199,10 +206,12 @@ export default function TruckingPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <ImagePlaceholder
-                description="[PHOTO NEEDED: Map graphic showing North America coverage - USA, Canada, and Mexico highlighted. Or could use a stylized route map showing major transportation corridors.]"
-                aspectRatio="video"
-                className="rounded-2xl"
+              <Image
+                src="/images/coverage-map.jpg"
+                alt="North America coverage map"
+                width={800}
+                height={450}
+                className="rounded-2xl object-cover"
               />
             </div>
 
