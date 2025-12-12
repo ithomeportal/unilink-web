@@ -30,7 +30,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Business Hours',
-    content: 'Mon - Sat: 8:00 AM - 5:00 PM',
+    content: '24 Hours - Monday to Sunday',
     description: '24/7 support available',
   },
 ];
