@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -35,32 +35,6 @@ export default function Footer() {
             <p className="text-gray-400 leading-relaxed">
               One of the leading transportation and logistics providers around the world. Delivering cargo beyond borders with excellence.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-800 flex items-center justify-center hover:bg-accent-500 transition-colors"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-800 flex items-center justify-center hover:bg-accent-500 transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-800 flex items-center justify-center hover:bg-accent-500 transition-colors"
-              >
-                <Instagram size={18} />
-              </a>
-            </div>
           </div>
 
           {/* Services */}

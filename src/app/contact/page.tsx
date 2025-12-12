@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 const contactInfo = [
@@ -280,39 +280,6 @@ export default function ContactPage() {
                   aspectRatio="video"
                   className="rounded-2xl shadow-lg"
                 />
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-primary-900 mb-4">Connect With Us</h3>
-                <p className="text-gray-600 mb-6">
-                  Follow us on social media for updates, industry news, and company announcements.
-                </p>
-                <div className="flex gap-4">
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white hover:bg-primary-700 transition-colors"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white hover:bg-primary-700 transition-colors"
-                  >
-                    <Facebook size={20} />
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white hover:bg-primary-700 transition-colors"
-                  >
-                    <Instagram size={20} />
-                  </a>
-                </div>
               </div>
 
               <div className="bg-primary-900 rounded-2xl p-8 text-white">
