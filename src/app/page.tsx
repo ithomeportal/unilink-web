@@ -1,29 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Truck, Plane, Ship, Clock, Shield, Globe, ArrowRight, CheckCircle, Phone } from 'lucide-react';
+import { Truck, Clock, Shield, Globe, ArrowRight, CheckCircle, Phone, Users } from 'lucide-react';
 
-const services = [
-  {
-    icon: Truck,
-    title: 'Over The Road',
-    description: 'The most suitable partner for your FTL inquiries. Comprehensive trucking throughout USA, Canada, and Mexico.',
-    href: '/services/trucking',
-    features: ['Dry Van 48\' & 53\'', 'Flatbed', 'Reefer', '24/7 Coverage'],
-  },
-  {
-    icon: Plane,
-    title: 'Air Freight',
-    description: 'Save time and optimize your cost with our air freight solutions. Next flight out to scheduled deliveries.',
-    href: '/services/air',
-    features: ['Air Charter', 'Next Day AM/PM', 'International', 'Expedited LTL'],
-  },
-  {
-    icon: Ship,
-    title: 'Ocean Shipping',
-    description: 'A wide variety of shipping routes for ocean cargo. Door to door, FCL, LCL, and break-bulk movements.',
-    href: '/services/ocean',
-    features: ['20\' & 40\' Containers', 'FCL & LCL', 'Customs Clearance', 'Global Routes'],
-  },
+const equipmentTypes = [
+  { name: 'Dry Van 48\' & 53\'', description: 'Standard enclosed trailers for general freight' },
+  { name: 'Flatbed', description: 'Open trailers for oversized and heavy cargo' },
+  { name: 'Reefer', description: 'Temperature-controlled for perishable goods' },
+  { name: 'Over-Dimension', description: 'Specialized equipment for exceptional loads' },
 ];
 
 const stats = [
@@ -36,7 +19,7 @@ const stats = [
 const features = [
   { icon: Clock, title: '24/7 Availability', description: 'Round-the-clock support and shipment tracking' },
   { icon: Shield, title: 'ISO 9001:2015', description: 'Certified quality management systems' },
-  { icon: Globe, title: 'Global Network', description: 'Pre-approved carriers across North America' },
+  { icon: Globe, title: 'North America', description: 'Coverage across USA, Canada & Mexico' },
 ];
 
 export default function HomePage() {
@@ -44,11 +27,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden">
-        {/* Background image placeholder */}
         <div className="absolute inset-0 opacity-20">
-          {/* [PHOTO NEEDED: High-quality hero image - Semi-truck on highway at sunset/sunrise,
-              or aerial view of logistics operations, or container ship at port.
-              Should convey scale, professionalism, and global reach. Minimum 1920x1080px] */}
           <div className="w-full h-full bg-gradient-to-r from-primary-900/80 to-primary-700/60" />
         </div>
 
@@ -57,26 +36,26 @@ export default function HomePage() {
             <div className="text-white space-y-8 animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
                 <span className="w-2 h-2 bg-accent-500 rounded-full animate-pulse" />
-                International 3PL Solutions
+                Full Container Trucking Specialists
               </div>
 
               <h1 className="heading-1">
-                Delivering Cargo
-                <span className="text-accent-500 block">Beyond Borders</span>
+                Over The Road
+                <span className="text-accent-500 block">Excellence</span>
               </h1>
 
               <p className="text-xl text-gray-300 max-w-lg leading-relaxed">
-                Revolutionizing 3rd-Party Logistics through our Hybrid Business Model.
-                Your trusted partner for international freight solutions across USA, Mexico, and Canada.
+                Your trusted partner for full container trucking across USA, Mexico, and Canada.
+                Reliable FTL services with pre-approved carrier partnerships.
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/quote" className="btn-accent inline-flex items-center gap-2">
-                  Get a Free Quote
+                <Link href="/services/trucking" className="btn-accent inline-flex items-center gap-2">
+                  Our Services
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="/services" className="btn-secondary">
-                  Explore Services
+                <Link href="/carriers" className="btn-secondary">
+                  Become a Carrier
                 </Link>
               </div>
 
@@ -102,7 +81,6 @@ export default function HomePage() {
                   className="rounded-2xl shadow-2xl object-cover"
                   priority
                 />
-                {/* Floating card */}
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs animate-slide-up">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center">
@@ -119,7 +97,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center pt-2">
             <div className="w-1 h-3 bg-white/50 rounded-full" />
@@ -141,51 +118,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Equipment Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="heading-2 text-primary-900 mb-4">
-              Our Transportation Services
+              Full Container Trucking
             </h2>
             <p className="text-gray-600 text-lg">
-              Comprehensive logistics solutions tailored to your needs. From ground transportation
-              to air and ocean freight, we&apos;ve got you covered.
+              We specialize in full truckload (FTL) services with a variety of equipment
+              to handle any type of cargo across North America.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="card card-hover p-8 group"
-                >
-                  <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-500 transition-colors">
-                    <Icon size={32} className="text-primary-600 group-hover:text-white transition-colors" />
-                  </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {equipmentTypes.map((equipment, index) => (
+              <div key={index} className="card p-6 text-center">
+                <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Truck size={28} className="text-primary-600" />
+                </div>
+                <h3 className="font-bold text-primary-900 mb-2">{equipment.name}</h3>
+                <p className="text-sm text-gray-600">{equipment.description}</p>
+              </div>
+            ))}
+          </div>
 
-                  <h3 className="heading-3 text-primary-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
-                        <CheckCircle size={16} className="text-accent-500" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex items-center gap-2 text-primary-600 font-semibold group-hover:text-accent-500 transition-colors">
-                    Learn More
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="text-center mt-12">
+            <Link href="/services/trucking" className="btn-primary inline-flex items-center gap-2">
+              Learn More About Our Services
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
@@ -197,7 +159,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <h2 className="heading-2 text-primary-900">
                 Your Trusted Partner in
-                <span className="text-accent-500"> Global Logistics</span>
+                <span className="text-accent-500"> North American Logistics</span>
               </h2>
 
               <p className="text-gray-600 text-lg leading-relaxed">
@@ -208,7 +170,7 @@ export default function HomePage() {
 
               <p className="text-gray-600 leading-relaxed">
                 Our mission is to constantly innovate a self-propelling formula that always adds value
-                to our customers, employees, and vendors while expanding globally as a multicultural enterprise.
+                to our customers, employees, and vendors while expanding as a multicultural enterprise.
               </p>
 
               <div className="grid grid-cols-3 gap-6 py-6">
@@ -239,7 +201,6 @@ export default function HomePage() {
                 height={600}
                 className="rounded-2xl object-cover"
               />
-              {/* Accent shape */}
               <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 bg-accent-500/10 rounded-2xl -z-10" />
             </div>
           </div>
@@ -276,25 +237,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Carrier CTA Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-12 md:p-16 text-center text-white relative overflow-hidden">
-            {/* Background pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-1/2 -translate-x-1/2" />
             </div>
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="heading-2 mb-4">Ready to Ship?</h2>
+              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users size={32} className="text-white" />
+              </div>
+              <h2 className="heading-2 mb-4">Are You a Carrier?</h2>
               <p className="text-xl text-primary-100 mb-8">
-                Get a free quote for your next shipment. Our team is ready to help you
-                find the best logistics solution.
+                Join our network of trusted carrier partners. We&apos;re always looking for
+                reliable carriers to grow with us across North America.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/quote" className="btn-accent">
-                  Get Free Quote
+                <Link href="/carriers" className="btn-accent">
+                  Become a Carrier
                 </Link>
                 <a href="tel:972-200-0606" className="btn-secondary bg-white hover:bg-gray-100">
                   Call 972-200-0606

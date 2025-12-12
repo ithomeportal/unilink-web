@@ -4,10 +4,8 @@ import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucid
 
 const footerLinks = {
   services: [
-    { name: 'Over The Road', href: '/services/trucking' },
-    { name: 'Air Freight', href: '/services/air' },
-    { name: 'Ocean Shipping', href: '/services/ocean' },
-    { name: 'Get a Quote', href: '/quote' },
+    { name: 'Trucking Services', href: '/services/trucking' },
+    { name: 'Become a Carrier', href: '/carriers' },
   ],
   company: [
     { name: 'About Us', href: '/about' },

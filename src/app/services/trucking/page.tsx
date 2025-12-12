@@ -70,12 +70,12 @@ export default function TruckingPage() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/quote" className="btn-accent inline-flex items-center gap-2">
-                  Get a Quote
+                <Link href="/contact" className="btn-accent inline-flex items-center gap-2">
+                  Contact Us
                   <ArrowRight size={18} />
                 </Link>
                 <a href="tel:972-200-0606" className="btn-secondary">
-                  Call Us Now
+                  Call 972-200-0606
                 </a>
               </div>
             </div>
@@ -266,14 +266,14 @@ export default function TruckingPage() {
         <div className="container-custom text-center">
           <h2 className="heading-2 mb-4">Ready to Ship?</h2>
           <p className="text-xl text-primary-200 mb-8 max-w-2xl mx-auto">
-            Get a quote for your next trucking shipment. Our team responds within 24 hours.
+            Are you a carrier looking to partner with us? Join our network and grow your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/quote" className="btn-accent">
-              Request a Quote
+            <Link href="/carriers" className="btn-accent">
+              Become a Carrier
             </Link>
-            <Link href="/services" className="btn-secondary">
-              View All Services
+            <Link href="/contact" className="btn-secondary">
+              Contact Us
             </Link>
           </div>
         </div>

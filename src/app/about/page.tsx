@@ -97,7 +97,7 @@ export default function AboutPage() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link href="/services" className="btn-primary">
+                <Link href="/services/trucking" className="btn-primary">
                   Our Services
                 </Link>
                 <Link href="/contact" className="btn-secondary">
@@ -271,13 +271,13 @@ export default function AboutPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-12 text-center text-white">
-            <h2 className="heading-2 mb-4">Ready to Partner with Us?</h2>
+            <h2 className="heading-2 mb-4">Partner With Us</h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Experience the Unilink difference. Let us handle your logistics while you focus on growing your business.
+              Join our network of trusted carriers or explore career opportunities with Unilink Transportation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/quote" className="btn-accent inline-flex items-center gap-2">
-                Get Started
+              <Link href="/carriers" className="btn-accent inline-flex items-center gap-2">
+                Become a Carrier
                 <ArrowRight size={18} />
               </Link>
               <Link href="/careers" className="btn-secondary bg-white hover:bg-gray-100">

@@ -75,7 +75,7 @@ export default function ContactPage() {
               Contact <span className="text-accent-500">Us</span>
             </h1>
             <p className="text-xl text-primary-100 leading-relaxed">
-              Have questions about our services? Need a quote? Our team is ready to help.
+              Have questions about our services? Our team is ready to help.
               Reach out to us and we&apos;ll respond promptly.
             </p>
           </div>
@@ -316,12 +316,12 @@ export default function ContactPage() {
               </div>
 
               <div className="bg-primary-900 rounded-2xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">Need a Quote?</h3>
+                <h3 className="text-xl font-bold mb-4">Are You a Carrier?</h3>
                 <p className="text-primary-200 mb-6">
-                  For shipping quotes and service inquiries, use our dedicated quote request form for faster response.
+                  Join our growing network of trusted carrier partners. Start the onboarding process today.
                 </p>
-                <Link href="/quote" className="btn-accent inline-block">
-                  Request a Quote
+                <Link href="/carriers" className="btn-accent inline-block">
+                  Become a Carrier
                 </Link>
               </div>
             </div>
