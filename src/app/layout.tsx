@@ -4,14 +4,19 @@ import Footer from '@/components/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Unilink Transportation | International 3PL & Logistics Solutions',
-  description: 'One of the leading transportation and logistics providers around the world. Over the Road, Air Freight, and Ocean Shipping services across USA, Canada, and Mexico.',
-  keywords: 'transportation, logistics, 3PL, freight, trucking, air freight, ocean shipping, USA, Mexico, Canada',
+  title: 'Unilink Transportation | Full Container Trucking & 3PL Solutions',
+  description: 'Leading transportation and logistics provider specializing in full container trucking across USA, Canada, and Mexico. 24/7 support, trusted carrier network.',
+  keywords: 'transportation, logistics, 3PL, freight, trucking, full container, FTL, USA, Mexico, Canada, carrier',
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
-    title: 'Unilink Transportation | International 3PL & Logistics Solutions',
-    description: 'Delivering cargo beyond borders. Over the Road, Air Freight, and Ocean Shipping services.',
+    title: 'Unilink Transportation | Full Container Trucking Specialists',
+    description: 'Delivering cargo beyond borders. Full container trucking across North America with 24/7 support.',
     type: 'website',
     locale: 'en_US',
+    images: ['/opengraph-image.png'],
   },
 };
 
