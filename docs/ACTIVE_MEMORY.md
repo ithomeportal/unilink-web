@@ -4,42 +4,40 @@
 
 ---
 
-## Current Status: AWAITING ASSETS
+## Current Status: LIVE ON VERCEL
 
 ### Project Phase
-**Phase 2: Asset Collection & Integration**
+**Phase 4: Live & Refinement**
 
-Phase 1 (Complete): Website structure and code
-Phase 2 (Current): Collecting photos and assets
-Phase 3 (Pending): Testing and refinement
-Phase 4 (Pending): Deployment to Vercel
+- Phase 1 (Complete): Website structure and code
+- Phase 2 (Complete): Asset collection and integration
+- Phase 3 (Complete): Deployment to Vercel
+- Phase 4 (Current): Refinement and form integration
+
+---
+
+## Live URLs
+- **Production:** https://unlk-web.vercel.app
+- **Repository:** https://github.com/ithomeportal/unilink-web
+- **Jobs Portal:** https://jobs.unilinktransportation.com
 
 ---
 
 ## Immediate Priorities
 
-### 1. Photos Needed (BLOCKING)
-See `PHOTOS_NEEDED.txt` for complete list with specifications.
+### 1. Form Integration (PENDING)
+- [ ] Connect contact form to email service (Formspree, EmailJS, etc.)
+- [ ] Connect carrier onboarding form to backend/CRM
 
-**High Priority Photos:**
-- [ ] Hero image (homepage)
-- [ ] CEO Erick Mendoza portrait
-- [ ] Company/team photo
-- [ ] At least one truck photo
+### 2. Social Media (PENDING - Client to Provide)
+- [ ] LinkedIn URL: _______________
+- [ ] Facebook URL: _______________
+- [ ] Instagram URL: _______________
+(Social media icons removed from footer until URLs are provided)
 
-### 2. Configuration Needed
-- [ ] Real social media URLs (currently placeholder)
-  - LinkedIn: _______________
-  - Facebook: _______________
-  - Instagram: _______________
-- [ ] Google Maps embed code for contact page
-- [ ] Form submission endpoint (email service or backend)
-
-### 3. Content Verification
-- [ ] Verify all phone numbers are correct
-- [ ] Verify email addresses
-- [ ] Confirm business hours
-- [ ] Review service descriptions for accuracy
+### 3. Analytics (PENDING)
+- [ ] Add Google Analytics or similar
+- [ ] Set up conversion tracking
 
 ---
 
@@ -47,17 +45,21 @@ See `PHOTOS_NEEDED.txt` for complete list with specifications.
 
 ### Company Info
 - **Company:** Unilink Transportation
-- **Type:** International 3PL Provider
+- **Type:** International 3PL Provider (Trucking Only)
 - **CEO:** Erick Mendoza
 - **HQ:** San Antonio, TX
 - **Phone:** 972-200-0606
 - **Email:** sales@unilinktransportation.com
-- **Hours:** Mon-Sat 8:00 AM - 5:00 PM
+- **Hours:** 24 Hours - Monday to Sunday
 
-### Services
+### Services (Updated Dec 12, 2025)
 1. Over The Road (Trucking) - USA, Canada, Mexico
-2. Air Freight - Worldwide
-3. Ocean Shipping - Global routes
+   - Dry Van (48' and 53')
+   - Flatbed (48' and 53')
+   - Reefer (48' and 53')
+   - Over-Dimension
+
+**REMOVED:** Air Freight, Ocean Shipping (no longer offered)
 
 ### Certifications
 - ISO 9001:2015 (company)
@@ -65,9 +67,44 @@ See `PHOTOS_NEEDED.txt` for complete list with specifications.
 - OEA (partner carriers)
 
 ### Brand Colors
-- Primary: #1e40af (Navy Blue)
+- Primary: #06274E (Navy Blue)
 - Accent: #f97316 (Orange)
 - Background: #f9fafb (Light Gray)
+
+---
+
+## Current Site Architecture
+
+```
+/                    → Home (Trucking focused)
+/about               → About Us
+/services/trucking   → Over The Road Trucking
+/carriers            → Carrier Onboarding Form
+/careers             → Work With Us (links to jobs.unilinktransportation.com)
+/contact             → Contact
+/privacy             → Privacy Policy
+```
+
+**Removed Pages:**
+- /services (hub page)
+- /services/air
+- /services/ocean
+- /quote
+
+---
+
+## Recent Changes (Dec 12, 2025)
+
+| Change | Status |
+|--------|--------|
+| Images integrated from /graph folder | Done |
+| Deployed to Vercel | Done |
+| Removed Air/Ocean services | Done |
+| Added Carrier Onboarding | Done |
+| Updated to 24/7 hours | Done |
+| Updated careers URL | Done |
+| Added favicon | Done |
+| Removed social media (temp) | Done |
 
 ---
 
@@ -75,10 +112,9 @@ See `PHOTOS_NEEDED.txt` for complete list with specifications.
 
 | Issue | Priority | Notes |
 |-------|----------|-------|
-| Forms not connected to backend | Medium | Need email service (Formspree, EmailJS, etc.) |
-| Social links are placeholders | Low | Update when URLs provided |
-| No analytics | Low | Add Google Analytics or similar |
-| No sitemap.xml | Low | Generate before SEO work |
+| Forms not connected to backend | High | Need email service |
+| No analytics | Medium | Add Google Analytics |
+| No sitemap.xml | Low | Generate for SEO |
 
 ---
 
@@ -102,6 +138,9 @@ npm start
 
 # Check for lint errors
 npm run lint
+
+# Deploy (auto via Vercel on push)
+git add -A && git commit -m "message" && git push origin main
 ```
 
 ---
@@ -113,19 +152,22 @@ npm run lint
 | Homepage | `src/app/page.tsx` |
 | Navigation | `src/components/Header.tsx` |
 | Footer | `src/components/Footer.tsx` |
+| Carrier Form | `src/app/carriers/page.tsx` |
+| Trucking Page | `src/app/services/trucking/page.tsx` |
 | Global styles | `src/app/globals.css` |
 | Tailwind config | `tailwind.config.js` |
-| Photos checklist | `docs/PHOTOS_NEEDED.txt` |
+| Favicon files | `src/app/icon.png`, `src/app/apple-icon.png` |
+| Images | `public/images/` |
 
 ---
 
 ## Last Updated
-December 11, 2025
+December 12, 2025
 
 ## Next Session Should
-1. Check if photos have been provided
-2. Replace ImagePlaceholder components with actual images
-3. Update social media links if provided
-4. Test forms and connect to email service
-5. Deploy to Vercel
+1. Connect forms to email service/backend
+2. Add social media links when client provides URLs
+3. Set up Google Analytics
+4. Generate sitemap.xml for SEO
+5. Performance optimization if needed
 
