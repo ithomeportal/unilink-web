@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucide-react';
 
 const footerLinks = {
@@ -24,10 +25,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company info */}
           <div className="space-y-6">
-            <div>
-              <span className="text-accent-500 font-bold text-2xl">UNILINK</span>
-              <span className="block text-sm font-normal tracking-wider text-gray-300">TRANSPORTATION</span>
-            </div>
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                alt="Unilink Transportation"
+                width={180}
+                height={50}
+                className="h-14 w-auto brightness-0 invert"
+              />
+            </Link>
             <p className="text-gray-400 leading-relaxed">
               One of the leading transportation and logistics providers around the world. Delivering cargo beyond borders with excellence.
             </p>
