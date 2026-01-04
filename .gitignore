@@ -39,3 +39,9 @@ next-env.d.ts
 *.txt
 graph/
 UNLK logo base.png
+
+# Documentation (keep local only)
+docs/
+*.md
+LICENSE*
+!.gitignore
