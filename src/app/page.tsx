@@ -26,14 +26,14 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden">
+      <section className="relative bg-gradient-hero overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="w-full h-full bg-gradient-to-r from-primary-900/80 to-primary-700/60" />
         </div>
 
-        <div className="container-custom relative z-10 pt-32 pb-20">
+        <div className="container-custom relative z-10 pt-32 pb-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white space-y-8 animate-fade-in">
+            <div className="text-white space-y-6 animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full text-sm">
                 <span className="w-2 h-2 bg-accent-500 rounded-full animate-pulse" />
                 Full Container Trucking Specialists
@@ -49,6 +49,19 @@ export default function HomePage() {
                 Reliable FTL services with pre-approved carrier partnerships.
               </p>
 
+              {/* Coverage Area Highlights */}
+              <div className="flex flex-wrap gap-3 py-2">
+                <span className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-sm font-medium">
+                  🇺🇸 United States
+                </span>
+                <span className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-sm font-medium">
+                  🇲🇽 Mexico
+                </span>
+                <span className="bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-sm font-medium">
+                  🇨🇦 Canada
+                </span>
+              </div>
+
               <div className="flex flex-wrap gap-4">
                 <Link href="/services/trucking" className="btn-accent inline-flex items-center gap-2">
                   Our Services
@@ -59,14 +72,18 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-6 pt-4">
+              <div className="flex flex-wrap items-center gap-6 pt-2">
                 <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle size={20} className="text-accent-500" />
                   <span>C-TPAT Partners</span>
                 </div>
                 <div className="flex items-center gap-2 text-gray-300">
                   <CheckCircle size={20} className="text-accent-500" />
-                  <span>ISO Certified</span>
+                  <span>ISO 9001:2015</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle size={20} className="text-accent-500" />
+                  <span>OEA Certified</span>
                 </div>
               </div>
             </div>
@@ -76,9 +93,9 @@ export default function HomePage() {
                 <Image
                   src="/images/hero-main.jpg"
                   alt="Unilink Transportation - Trucking Services"
-                  width={600}
-                  height={600}
-                  className="rounded-2xl shadow-2xl object-cover"
+                  width={700}
+                  height={500}
+                  className="rounded-2xl shadow-2xl object-cover w-full"
                   priority
                 />
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs animate-slide-up">
@@ -96,18 +113,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 border-2 border-white/30 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
-          </div>
-        </div>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-white py-12 -mt-1 relative z-20">
+      <section className="bg-white py-12 relative z-20">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-primary-600 rounded-2xl p-8 md:p-12 -mt-20 shadow-xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-primary-600 rounded-2xl p-8 md:p-12 -mt-12 shadow-xl">
             {stats.map((stat, index) => (
               <div key={index} className="text-center text-white">
                 <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
