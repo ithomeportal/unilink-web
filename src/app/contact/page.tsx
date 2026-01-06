@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 const contactInfo = [
   {
@@ -275,10 +275,12 @@ export default function ContactPage() {
             <div className="space-y-8">
               <div>
                 <h2 className="heading-2 text-primary-900 mb-6">Our Location</h2>
-                <ImagePlaceholder
-                  description="[PHOTO NEEDED: Google Maps embed or static map image showing San Antonio, TX headquarters location. Alternatively, a professional photo of the Unilink office building exterior.]"
-                  aspectRatio="video"
-                  className="rounded-2xl shadow-lg"
+                <Image
+                  src="/images/san-antonio-downtown.jpg"
+                  alt="Downtown San Antonio, Texas - Unilink Transportation headquarters"
+                  width={600}
+                  height={400}
+                  className="w-full rounded-2xl shadow-lg object-cover"
                 />
               </div>
 
