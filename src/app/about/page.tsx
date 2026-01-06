@@ -66,8 +66,8 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <Image
-                src="/images/headquarters.jpeg"
-                alt="Unilink Transportation Headquarters"
+                src="/images/san-antonio-scenic.jpg"
+                alt="San Antonio, Texas - Unilink Transportation Headquarters"
                 width={800}
                 height={450}
                 className="rounded-2xl shadow-lg object-cover"
