@@ -25,7 +25,7 @@ const equipmentTypes = [
     name: 'Reefer',
     sizes: '48\' and 53\'',
     description: 'Temperature-controlled trailers for perishable goods, pharmaceuticals, and temperature-sensitive cargo.',
-    image: '/images/fresh-produce-transport.jpg',
+    image: '/images/equipment-reefer.jpg',
   },
   {
     name: 'Over-Dimension',
